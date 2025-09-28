@@ -1,0 +1,24 @@
+{
+  "name": "patient_management_system",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Patient Management System - React Frontend + NestJS Backend + Prisma",
+  "scripts": {
+    "dev:both": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "cd server && npm run start:dev",
+    "dev:client": "cd client && npm run dev",
+    "build": "npm run build:server && npm run build:client",
+    "build:server": "cd server && npm run build",
+    "build:client": "cd client && npm run build",
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install",
+    "clean": "(rmdir /s /q node_modules 2>nul || rm -rf node_modules 2>/dev/null || echo ok) && cd server && (rmdir /s /q node_modules dist 2>nul || rm -rf node_modules dist 2>/dev/null || echo ok) && cd ../client && (rmdir /s /q node_modules dist 2>nul || rm -rf node_modules dist 2>/dev/null || echo ok)",
+    "test": "cd server && npm run test",
+    "lint": "cd server && npm run lint && cd ../client && npm run lint",
+    "db:migrate": "cd server && npx prisma migrate dev",
+    "db:seed": "cd server && npx prisma db seed",
+    "db:reset": "cd server && npx prisma migrate reset"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
