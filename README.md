@@ -72,6 +72,19 @@ npm run dev
 - **Покрытие кода:** ~30% 
 - **Тестовые утилиты:** моки, хелперы, setup файлы
 
+## Скриншоты интерфейса
+
+### Desktop
+<img width="1352" height="626" alt="2025-10-03_11-50-05" src="https://github.com/user-attachments/assets/e311bf7e-e919-4dff-97fa-a90433b31225" />
+<img width="1491" height="712" alt="2025-10-03_11-52-11" src="https://github.com/user-attachments/assets/8a0b18bd-5283-4153-878d-11cb87867537" />
+<img width="1235" height="437" alt="2025-10-03_11-50-54" src="https://github.com/user-attachments/assets/e6ec9d40-f427-4819-985b-f8278fa1040b" />
+
+### Mobile
+<img width="422" height="582" alt="2025-10-03_11-55-13" src="https://github.com/user-attachments/assets/4c66a05b-81b8-429f-a5dc-ee53421dec69" />
+
+<img width="373" height="717" alt="2025-10-03_11-57-34" src="https://github.com/user-attachments/assets/9300f9ab-8d61-4246-9090-fbb716ebf90e" />
+
+
 ## Основные возможности
 
 ### 🏥 Управление пациентами
