@@ -1,0 +1,52 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Модели данных для системы управления пациентами
+
+model Patient {
+  id          String   @id @default(cuid())
+  firstName   String
+  lastName    String
+  dateOfBirth DateTime
+  phoneNumber String
+  email       String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  // Связь один-ко-многим с визитами
+  visits Visit[]
+
+  @@map("patients")
+}
+
+model Visit {
+  id        String      @id @default(cuid())
+  patientId String
+  visitDate DateTime
+  diagnosis String
+  treatment String
+  status    VisitStatus @default(SCHEDULED)
+  notes     String?
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+  
+  // Связь многие-к-одному с пациентом
+  patient Patient @relation(fields: [patientId], references: [id], onDelete: Cascade)
+
+  @@map("visits")
+}
+
+enum VisitStatus {
+  SCHEDULED
+  COMPLETED
+  CANCELLED
+}
